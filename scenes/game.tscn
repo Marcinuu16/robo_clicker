@@ -1,12 +1,29 @@
 [gd_scene format=3 uid="uid://cfvdox8ritol0"]
 
-[ext_resource type="Texture2D" uid="uid://lk6vtf7mnewb" path="res://assets/textures/blueprint_background.png" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dfqvxkttyfolg" path="res://assets/textures/junk_sky.png" id="1_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://c7ppo4xfc6857" path="res://assets/textures/junkyard.png" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://bln1bwdyq41dg" path="res://assets/textures/junk_far_clouds.png" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://dxk2rjoaivtfk" path="res://scenes/gui.tscn" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://epo0oqcm7p3l" path="res://assets/textures/junk_close_clouds.png" id="3_p57ef"]
 
-[node name="game" type="Node2D" unique_id=66199693]
+[node name="Game" type="Node2D" unique_id=66199693]
 
-[node name="ClickerTestBakcground" type="Sprite2D" parent="." unique_id=442365450]
+[node name="Background" type="Sprite2D" parent="." unique_id=1813869008]
+position = Vector2(160, 90)
+texture = ExtResource("1_lnu2h")
+
+[node name="Clouds1" type="Sprite2D" parent="." unique_id=1924973246]
+position = Vector2(160, 90)
+texture = ExtResource("2_iywne")
+
+[node name="Clouds2" type="Sprite2D" parent="." unique_id=219418031]
+position = Vector2(160, 90)
+texture = ExtResource("3_p57ef")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=442365450]
 position = Vector2(160, 90)
 texture = ExtResource("1_yqjtg")
 
-[node name="gui" parent="." unique_id=2029906526 instance=ExtResource("2_yqjtg")]
+[node name="Gui" parent="." unique_id=2029906526 instance=ExtResource("2_yqjtg")]
+offset_left = 2.0
+offset_right = 2.0

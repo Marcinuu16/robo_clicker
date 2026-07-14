@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy1jgv6kvsnit"
-path="res://.godot/imported/clicker_test_bakcground.png-3c46a1f665cd36399d0d24b27c554df7.ctex"
+uid="uid://epo0oqcm7p3l"
+path="res://.godot/imported/junk_close_clouds.png-48364f89cfd9a13469813ab9cd4dfafd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/clicker_test_bakcground.png"
-dest_files=["res://.godot/imported/clicker_test_bakcground.png-3c46a1f665cd36399d0d24b27c554df7.ctex"]
+source_file="res://assets/textures/junk_close_clouds.png"
+dest_files=["res://.godot/imported/junk_close_clouds.png-48364f89cfd9a13469813ab9cd4dfafd.ctex"]
 
 [params]
 
