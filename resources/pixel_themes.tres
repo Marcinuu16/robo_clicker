@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dsfdv7euwees0"]
+
+[ext_resource type="FontFile" uid="uid://couvrs37gtfql" path="res://assets/fonts/fs-pixel-sans-unicode-regular.regular.ttf" id="1_ynnac"]
+
+[resource]
+default_font = ExtResource("1_ynnac")
+default_font_size = 16
