@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cmfcqmv8ioyy3"]
+
+[ext_resource type="Texture2D" uid="uid://dfqvxkttyfolg" path="res://assets/textures/junk_sky.png" id="1_3hy4n"]
+[ext_resource type="Script" uid="uid://b2c2vw3utvfvm" path="res://scripts/sky.gd" id="1_v26od"]
+[ext_resource type="Texture2D" uid="uid://bln1bwdyq41dg" path="res://assets/textures/junk_far_clouds.png" id="2_v26od"]
+[ext_resource type="Texture2D" uid="uid://epo0oqcm7p3l" path="res://assets/textures/junk_close_clouds.png" id="3_uel4y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hy4n"]
+atlas = ExtResource("2_v26od")
+region = Rect2(0, 0, 480, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6joac"]
+atlas = ExtResource("2_v26od")
+region = Rect2(480, 0, 480, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v26od"]
+atlas = ExtResource("3_uel4y")
+region = Rect2(0, 0, 480, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uel4y"]
+atlas = ExtResource("3_uel4y")
+region = Rect2(480, 0, 480, 0)
+
+[node name="MotionSky" type="Node2D" unique_id=167517914]
+script = ExtResource("1_v26od")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1444537930]
+texture = ExtResource("1_3hy4n")
+centered = false
+
+[node name="FarClouds1" type="Sprite2D" parent="." unique_id=1259216397]
+texture = SubResource("AtlasTexture_3hy4n")
+centered = false
+
+[node name="FarClouds2" type="Sprite2D" parent="." unique_id=225577818]
+position = Vector2(-480, 0)
+texture = SubResource("AtlasTexture_6joac")
+centered = false
+
+[node name="CloseClouds1" type="Sprite2D" parent="." unique_id=206131865]
+texture = SubResource("AtlasTexture_v26od")
+centered = false
+
+[node name="CloseClouds2" type="Sprite2D" parent="." unique_id=1647392522]
+position = Vector2(480, 0)
+texture = SubResource("AtlasTexture_uel4y")
+centered = false
