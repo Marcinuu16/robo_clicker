@@ -26,11 +26,12 @@ centered = false
 [node name="Gui" parent="." unique_id=2029906526 instance=ExtResource("3_bihxj")]
 offset_left = 2.0
 offset_right = 2.0
+scale = Vector2(1.0012285, 1)
 
 [node name="ScrapArea2D" type="Area2D" parent="." unique_id=613909758]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScrapArea2D" unique_id=198654575]
-polygon = PackedVector2Array(0, 57, 0, 57, 11, 56, 29, 57, 41, 61, 51, 67, 57, 72, 75, 58, 77, 60, 75, 64, 96, 86, 100, 93, 113, 97, 146, 112, 161, 108, 177, 107, 174, 104, 177, 102, 196, 102, 199, 100, 219, 95, 238, 78, 242, 65, 247, 56, 251, 52, 257, 51, 262, 52, 265, 55, 266, 61, 264, 66, 271, 62, 281, 59, 300, 56, 320, 55, 320, 119, 293, 133, 289, 137, 284, 180, 56, 180, 58, 175, 63, 172, 61, 163, 47, 149, 39, 151, 33, 144, 32, 144, 28, 154, 21, 156, 16, 152, 12, 152, 0, 158, 0, 59)
+polygon = PackedVector2Array(0, 57, 0, 57, 11, 56, 29, 57, 41, 61, 51, 67, 57, 72, 75, 58, 77, 60, 75, 64, 96, 86, 100, 93, 113, 97, 146, 112, 161, 108, 177, 107, 174, 104, 177, 102, 196, 102, 199, 100, 219, 95, 238, 78, 242, 65, 247, 56, 251, 52, 257, 51, 262, 52, 265, 55, 266, 61, 264, 66, 271, 62, 281, 59, 300, 56, 320, 55, 320, 119, 296, 133, 289, 139, 276, 140, 271, 180, 56, 180, 58, 175, 63, 172, 61, 163, 47, 149, 39, 151, 33, 144, 32, 144, 28, 154, 21, 156, 16, 152, 12, 152, 0, 158, 0, 59)
 
 [node name="CarArea2D" type="Area2D" parent="." unique_id=985667343]
 
@@ -46,7 +47,7 @@ centered = false
 [node name="VanArea2D" type="Area2D" parent="." unique_id=391386200]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VanArea2D" unique_id=1864903415]
-polygon = PackedVector2Array(284, 180, 289, 137, 293, 133, 320, 119, 320, 180)
+polygon = PackedVector2Array(271, 180, 276, 140, 289, 139, 296, 133, 320, 119, 320, 180)
 
 [node name="Sprite2D" type="Sprite2D" parent="VanArea2D/CollisionPolygon2D" unique_id=1076642992]
 visible = false
@@ -54,7 +55,10 @@ position = Vector2(256, 116)
 texture = SubResource("AtlasTexture_ccwub")
 centered = false
 
+[connection signal="input_event" from="ScrapArea2D" to="." method="_on_scrap_area_2d_input_event"]
+[connection signal="input_event" from="CarArea2D" to="." method="_on_car_area_2d_input_event"]
 [connection signal="mouse_entered" from="CarArea2D" to="." method="_on_car_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="CarArea2D" to="." method="_on_car_area_2d_mouse_exited"]
+[connection signal="input_event" from="VanArea2D" to="." method="_on_van_area_2d_input_event"]
 [connection signal="mouse_entered" from="VanArea2D" to="." method="_on_van_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="VanArea2D" to="." method="_on_van_area_2d_mouse_exited"]
