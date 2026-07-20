@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dxk2rjoaivtfk"]
 
+[ext_resource type="Texture2D" uid="uid://cy1jgv6kvsnit" path="res://assets/textures/test_bakcground.png" id="1_b8iy7"]
 [ext_resource type="Theme" uid="uid://dsfdv7euwees0" path="res://resources/pixel_themes.tres" id="1_efmwq"]
 [ext_resource type="LabelSettings" uid="uid://cshyt07upih85" path="res://resources/pixel_labels.tres" id="2_mfius"]
+[ext_resource type="FontFile" uid="uid://tvld1wur7pu" path="res://assets/fonts/PIXY.otf" id="2_ynd5l"]
 
 [node name="gui" type="Control" unique_id=2029906526]
 layout_mode = 3
@@ -11,11 +13,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=169136735]
+visible = false
+texture = ExtResource("1_b8iy7")
+centered = false
+
+[node name="Label2" type="Label" parent="." unique_id=848473725]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_right = 296.0
+offset_bottom = 54.0
+theme = ExtResource("1_efmwq")
+theme_override_fonts/font = ExtResource("2_ynd5l")
+theme_override_font_sizes/font_size = 8
+text = "Moving Sky Test 1234567890"
+label_settings = ExtResource("2_mfius")
+
 [node name="Label" type="Label" parent="." unique_id=1595341971]
 texture_filter = 1
 layout_mode = 0
-offset_right = 164.0
+offset_left = 2.0
+offset_right = 294.0
 offset_bottom = 54.0
 theme = ExtResource("1_efmwq")
+theme_override_fonts/font = ExtResource("2_ynd5l")
+theme_override_font_sizes/font_size = 8
 text = "Moving Sky Test 1234567890"
 label_settings = ExtResource("2_mfius")

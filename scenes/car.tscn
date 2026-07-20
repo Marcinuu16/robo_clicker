@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bykgp2dvqalfu"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://scenes/interaction.tscn" id="1_c35m8"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="2_qt2eu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt2eu"]
+atlas = ExtResource("2_qt2eu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c35m8"]
+atlas = ExtResource("2_qt2eu")
+region = Rect2(64, 0, 64, 64)
+
+[node name="Car" unique_id=47595653 instance=ExtResource("1_c35m8")]
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(-32, 9, -18, 3, -10, 7, -3, 4, 0, -5, 8, 2, 15, 0, 30, 15, 31, 25, 26, 29, 25, 32, -32, 32)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_qt2eu")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_c35m8")

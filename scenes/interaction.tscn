@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://deylbytwtcknv"]
+
+[ext_resource type="Script" uid="uid://qhybuxoki7h7" path="res://scripts/interaction.gd" id="1_eqegh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40vbe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqegh"]
+
+[node name="Interaction" type="Node2D" unique_id=47595653]
+script = ExtResource("1_eqegh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2063484064]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1964901811]
+polygon = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
+
+[node name="BodySprite" type="Sprite2D" parent="." unique_id=497898303]
+texture = SubResource("AtlasTexture_40vbe")
+
+[node name="OutlineSprite" type="Sprite2D" parent="." unique_id=934523477]
+texture = SubResource("AtlasTexture_eqegh")

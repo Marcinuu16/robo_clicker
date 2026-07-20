@@ -1,6 +1,6 @@
 extends Node2D
-var close_cloud_step: int = 4
-var far_cloud_step: int = 2
+var close_cloud_step: int = 8
+var far_cloud_step: int = 6
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
