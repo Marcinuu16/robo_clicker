@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bhcekrb2u3bvh"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_xob7c"]
+[ext_resource type="Script" uid="uid://ctkau8arxnaw6" path="res://core/interactibles/landfill/landfill_interaction.gd" id="2_py7ps"]
+[ext_resource type="Texture2D" uid="uid://c7ppo4xfc6857" path="res://assets/textures/junkyard.png" id="3_qrjch"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="4_28bhe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg8yn"]
+atlas = ExtResource("3_qrjch")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56lgi"]
+atlas = ExtResource("4_28bhe")
+region = Rect2(0, 64, 320, 64)
+
+[node name="LandfillInteraction" unique_id=47595653 instance=ExtResource("1_xob7c")]
+script = ExtResource("2_py7ps")
+
+[node name="Area2D" parent="." index="0" unique_id=2063484064]
+position = Vector2(-160, -90)
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0" unique_id=1964901811]
+polygon = PackedVector2Array(20, 55, 34, 57, 48, 63, 55, 68, 57, 71, 75, 57, 78, 60, 76, 64, 97, 86, 99, 92, 114, 96, 145, 111, 174, 106, 173, 103, 177, 101, 182, 103, 184, 101, 196, 101, 218, 95, 236, 78, 241, 65, 246, 55, 253, 50, 260, 50, 266, 55, 267, 61, 266, 64, 274, 60, 301, 55, 320, 54, 320, 119, 317, 119, 291, 134, 288, 137, 275, 139, 269, 180, 57, 180, 59, 176, 63, 173, 62, 163, 47, 148, 40, 150, 32, 143, 29, 152, 22, 155, 14, 151, 0, 157, 0, 56)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_xg8yn")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+visible = false
+position = Vector2(0, -9)
+texture = SubResource("AtlasTexture_56lgi")

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://deylbytwtcknv"]
 
-[ext_resource type="Script" uid="uid://qhybuxoki7h7" path="res://scripts/interaction.gd" id="1_eqegh"]
+[ext_resource type="Script" uid="uid://qhybuxoki7h7" path="res://core/interactibles/_interaction/interaction.gd" id="1_dk6sy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40vbe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqegh"]
 
 [node name="Interaction" type="Node2D" unique_id=47595653]
-script = ExtResource("1_eqegh")
+script = ExtResource("1_dk6sy")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2063484064]
 
