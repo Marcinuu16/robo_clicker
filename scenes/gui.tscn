@@ -28,7 +28,9 @@ offset_bottom = 54.0
 theme = ExtResource("1_efmwq")
 theme_override_fonts/font = ExtResource("2_ynd5l")
 theme_override_font_sizes/font_size = 8
-text = "Moving Sky Test 1234567890"
+text = "0
+
+"
 label_settings = ExtResource("2_mfius")
 
 [node name="Label" type="Label" parent="." unique_id=1595341971]
@@ -40,5 +42,7 @@ offset_bottom = 54.0
 theme = ExtResource("1_efmwq")
 theme_override_fonts/font = ExtResource("2_ynd5l")
 theme_override_font_sizes/font_size = 8
-text = "Moving Sky Test 1234567890"
+text = "0
+
+"
 label_settings = ExtResource("2_mfius")

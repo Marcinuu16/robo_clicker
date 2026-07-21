@@ -5,6 +5,9 @@
 
 [node name="Game" type="Node2D" unique_id=990814266]
 
-[node name="JunkyardOutside" parent="." unique_id=66199693 instance=ExtResource("2_yqjtg")]
+[node name="CurrentScene" type="Node2D" parent="." unique_id=1510427659]
+
+[node name="JunkyardOutside" parent="CurrentScene" unique_id=66199693 instance=ExtResource("2_yqjtg")]
 
 [node name="gui" parent="." unique_id=2029906526 instance=ExtResource("1_uwrxv")]
+metadata/_edit_use_anchors_ = true
