@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://ujvhe66stwdo"]
 
+[ext_resource type="Texture2D" uid="uid://b1t4qlon0knhw" path="res://assets/textures/van_back.png" id="1_ode3p"]
+
 [node name="VanInside" type="Node2D" unique_id=1079369823]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=305455758]
+texture = ExtResource("1_ode3p")
+centered = false
