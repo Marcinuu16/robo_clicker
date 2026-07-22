@@ -11,3 +11,5 @@ func _process(delta: float) -> void:
 	
 func left_click():
 	print("Clicked landfill!")
+	AutoloadGameManager.update_click_count(1)
+	
