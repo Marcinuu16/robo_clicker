@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhcekrb2u3bvh"]
 
 [ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_xob7c"]
-[ext_resource type="Script" uid="uid://ctkau8arxnaw6" path="res://core/interactibles/landfill/landfill_interaction.gd" id="2_py7ps"]
+[ext_resource type="Script" uid="uid://ctkau8arxnaw6" path="res://core/views/junkyard/landfill/landfill_interaction.gd" id="2_py7ps"]
 [ext_resource type="Texture2D" uid="uid://c7ppo4xfc6857" path="res://assets/textures/junkyard.png" id="3_qrjch"]
 [ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="4_28bhe"]
 

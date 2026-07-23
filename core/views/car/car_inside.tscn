@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bkpuaej3sljmi"]
 
 [ext_resource type="Texture2D" uid="uid://y4bj4dq2yenj" path="res://assets/textures/car_trunk.png" id="1_8ptd5"]
-[ext_resource type="PackedScene" uid="uid://kiqv3rrh8px8" path="res://core/interactibles/trunk/trunk_interaction.tscn" id="2_br0gq"]
+[ext_resource type="PackedScene" uid="uid://kiqv3rrh8px8" path="res://core/views/car/trunk/trunk_interaction.tscn" id="2_br0gq"]
 
 [node name="CarInside" type="Node2D" unique_id=351541619]
 

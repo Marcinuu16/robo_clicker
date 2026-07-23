@@ -11,3 +11,4 @@ func _process(delta: float) -> void:
 	
 func left_click():
 	print("Clicked vam!")
+	AutoloadGameManager.change_view("res://core/views/van/van_inside.tscn")

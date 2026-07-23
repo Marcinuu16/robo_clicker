@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bfqpbql3hfxlj"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_47n3b"]
+[ext_resource type="Script" uid="uid://c50vrtus5ys4s" path="res://core/views/van/doors/doors_interaction.gd" id="2_glviw"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="3_ta4g8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3lnn"]
+atlas = ExtResource("3_ta4g8")
+region = Rect2(0, 256, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k1dk"]
+atlas = ExtResource("3_ta4g8")
+region = Rect2(0, 436, 320, 180)
+
+[node name="DoorsInteraction" unique_id=47595653 instance=ExtResource("1_47n3b")]
+script = ExtResource("2_glviw")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(0, 14, 13, 8, 17, 11, 17, 7, 28, 0, 45, 0, 45, 63, 43, 65, 39, 63, 37, 65, 41, 69, 43, 68, 45, 71, 45, 141, 44, 144, 42, 148, 45, 152, 45, 166, 42, 169, 43, 171, 41, 174, 39, 173, 37, 176, 31, 180, 0, 180)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="1" unique_id=1938486439]
+polygon = PackedVector2Array(275, 0, 292, 0, 319, 14, 319, 17, 317, 19, 320, 22, 320, 180, 289, 180, 275, 172, 275, 142, 288, 139, 278, 136, 279, 133, 275, 131, 275, 125, 278, 121, 275, 119, 275, 72, 277, 71, 279, 73, 280, 69, 282, 69, 278, 66, 278.7561, 64.48782, 279, 64, 275, 65)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_h3lnn")
+centered = false
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_0k1dk")
+centered = false

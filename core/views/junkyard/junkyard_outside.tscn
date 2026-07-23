@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cfvdox8ritol0"]
 
-[ext_resource type="PackedScene" uid="uid://cmfcqmv8ioyy3" path="res://core/views/junkyard/sky.tscn" id="2_5fqem"]
-[ext_resource type="PackedScene" uid="uid://bhcekrb2u3bvh" path="res://core/interactibles/landfill/landfill_interaction.tscn" id="3_jw7r8"]
-[ext_resource type="PackedScene" uid="uid://bykgp2dvqalfu" path="res://core/interactibles/car/car_interaction.tscn" id="4_ghpm3"]
-[ext_resource type="PackedScene" uid="uid://bner5pamjieyk" path="res://core/interactibles/van/van_interaction.tscn" id="5_cmx4j"]
+[ext_resource type="PackedScene" uid="uid://cmfcqmv8ioyy3" path="res://core/views/sky/sky.tscn" id="2_5fqem"]
+[ext_resource type="PackedScene" uid="uid://bhcekrb2u3bvh" path="res://core/views/junkyard/landfill/landfill_interaction.tscn" id="3_jw7r8"]
+[ext_resource type="PackedScene" uid="uid://bykgp2dvqalfu" path="res://core/views/junkyard/car/car_interaction.tscn" id="4_ghpm3"]
+[ext_resource type="PackedScene" uid="uid://bner5pamjieyk" path="res://core/views/junkyard/van/van_interaction.tscn" id="5_cmx4j"]
 
 [node name="JunkyardOutside" type="Node2D" unique_id=66199693]
 

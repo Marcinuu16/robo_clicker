@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kiqv3rrh8px8"]
 
 [ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_xqugj"]
-[ext_resource type="Script" uid="uid://7181ymwspgpy" path="res://core/interactibles/trunk/trunk_interaction.gd" id="2_6kyy1"]
+[ext_resource type="Script" uid="uid://7181ymwspgpy" path="res://core/views/car/trunk/trunk_interaction.gd" id="2_6kyy1"]
 [ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="3_2wtq4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xec8j"]
