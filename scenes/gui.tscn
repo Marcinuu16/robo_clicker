@@ -48,5 +48,5 @@ text = "0
 label_settings = ExtResource("2_mfius")
 
 [node name="ColorTimer" type="Timer" parent="." unique_id=672484022]
-wait_time = 0.25
+wait_time = 0.1
 one_shot = true
