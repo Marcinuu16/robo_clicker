@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dsfdv7euwees0"]
+
+[ext_resource type="FontFile" uid="uid://tvld1wur7pu" path="res://assets/fonts/PIXY.otf" id="1_kvtaa"]
+
+[resource]
+default_font = ExtResource("1_kvtaa")
+default_font_size = 16

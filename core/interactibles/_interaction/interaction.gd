@@ -1,5 +1,6 @@
 extends Node2D
 class_name Interaction
+@export var description: String = "testter"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,9 +20,11 @@ func handle_input(_viewport, event, _shape):
 func hover_object():
 	print("mouse has entered an object")
 	$OutlineSprite.visible = true
+	AutoloadGameManager.update_description_gui(description)
 func dehover_object():
 	print("mouse has exited an object")
 	$OutlineSprite.visible = false
+	AutoloadGameManager.update_description_gui("")
 func left_click():
 	print("mouse clicked an object")
 	

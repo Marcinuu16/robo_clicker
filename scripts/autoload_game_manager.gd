@@ -2,24 +2,30 @@ extends Node
 var click_count: int = 0
 var gui_node: Control
 var number_label: Label
-var decor_label: Label
+var numberD_label: Label
+var description_label: Label
+var descriptionD_label: Label
+
 var click_timer: Timer
 
 var owned_upgrades = {
 	"WorkerGloves":{
 		"owned":false,
 		"price":30,
-		"desc":"Basic Gloves to get the job done; Grants +1 scrap per click"
+		"desc":"Basic Gloves to get the job done;
+		Grants +1 scrap per click"
 	},
 	"Flashlight":{
 		"owned":false,
 		"price":100,
-		"desc":"Allows seeing in dark spots; Every 3 clicks adds 5 bonus scrap"
+		"desc":"Allows seeing in dark spots
+		Every 3 clicks adds 5 bonus scrap"
 	},
 	"Magnet":{
 		"owned":false,
 		"price":200,
-		"desc":"A magnet helps pulling things towards you; 15% chance of granting +10 scrap with each click"
+		"desc":"A magnet helps pulling things towards you;
+		15% chance of granting +10 scrap with each click"
 	},
 	"FoldingChair":{
 		"owned":false,
@@ -74,12 +80,13 @@ var owned_upgrades = {
 }
 	
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gui_node = get_tree().current_scene.get_node("gui")
 	number_label = gui_node.get_node("Number")
-	decor_label = gui_node.get_node("Decor")
+	numberD_label = gui_node.get_node("NumberD")
+	description_label = gui_node.get_node("Description")
+	descriptionD_label = gui_node.get_node("DescriptionD")
 	click_timer = gui_node.get_node("ColorTimer")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -91,7 +98,7 @@ func update_click_count(amount: int):
 
 func update_click_gui():
 	number_label.text = str(click_count)
-	decor_label.text = str(click_count)
+	numberD_label.text = str(click_count)
 	number_label.label_settings.font_color = Color.GOLD
 	click_timer.start()
 	await click_timer.timeout
@@ -110,4 +117,11 @@ func change_view(scene_path: String):
 		child.queue_free()
 	
 	container.add_child(packed_scene.instantiate())
+	
+func purchase_upgrade():
+	pass
+	
+func update_description_gui(desc):
+	description_label.text = desc
+	descriptionD_label.text = desc
 	

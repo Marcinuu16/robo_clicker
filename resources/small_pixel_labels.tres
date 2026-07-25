@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dpy84up3n0v6d"]
+
+[ext_resource type="FontFile" uid="uid://tvld1wur7pu" path="res://assets/fonts/PIXY.otf" id="1_fg2vt"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_fg2vt")
+font_size = 10
+outline_color = Color(0, 0, 0, 1)
