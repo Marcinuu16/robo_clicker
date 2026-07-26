@@ -9,10 +9,16 @@ var descriptionD_label: Label
 var click_timer: Timer
 
 var owned_upgrades = {
+	"NonUpgrade":{
+		"owned":false,
+		"price":0,
+		"desc":"Test Dummy for now"
+	},
 	"WorkerGloves":{
 		"owned":false,
 		"price":30,
-		"desc":"Basic Gloves to get the job done;
+		"desc":"Cost: 30 scrap
+		'Basic Gloves to get the job done'
 		Grants +1 scrap per click"
 	},
 	"Flashlight":{
@@ -79,7 +85,6 @@ var owned_upgrades = {
 	}
 }
 	
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gui_node = get_tree().current_scene.get_node("gui")
@@ -93,6 +98,9 @@ func _process(delta: float) -> void:
 	pass
 
 func update_click_count(amount: int):
+	if owned_upgrades["WorkerGloves"]["owned"] == true:
+		amount += 1
+		
 	click_count += amount
 	update_click_gui()
 
@@ -103,7 +111,11 @@ func update_click_gui():
 	click_timer.start()
 	await click_timer.timeout
 	number_label.label_settings.font_color = Color.WHITE
-
+	
+func update_description_gui(desc):
+	description_label.text = desc
+	descriptionD_label.text = desc
+	
 func change_view(scene_path: String):
 	var packed_scene = load(scene_path)
 	if not packed_scene:
@@ -117,11 +129,26 @@ func change_view(scene_path: String):
 		child.queue_free()
 	
 	container.add_child(packed_scene.instantiate())
+	update_description_gui("")
+
+func can_purchase(name):
+	if name == "NonUpgrade":
+		description_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		return
+	if (click_count < owned_upgrades[name].price) or owned_upgrades[name].owned == true:
+		print("--- You can't purchase "+name)
+		description_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+		return false
+	else: 
+		description_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		print("--- You can purchase "+name)
+		return true
+func purchase(name):
+	owned_upgrades[name]["owned"] = true
+	click_count = click_count - owned_upgrades[name]["price"]
+	update_click_gui()
+	print(owned_upgrades)
 	
-func purchase_upgrade():
-	pass
 	
-func update_description_gui(desc):
-	description_label.text = desc
-	descriptionD_label.text = desc
+
 	

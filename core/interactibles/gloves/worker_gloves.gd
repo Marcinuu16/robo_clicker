@@ -4,12 +4,10 @@ extends Interaction
 func _ready() -> void:
 	super._ready()
 	print("The gloves exist!")
-	description = AutoloadGameManager.owned_upgrades["WorkerGloves"]["desc"]
+	upgrade_name = "WorkerGloves"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
-func left_click():
-	print("Tidy!")
 	
