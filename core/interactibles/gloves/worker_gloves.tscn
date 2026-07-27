@@ -6,17 +6,17 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dik0y"]
 atlas = ExtResource("3_2cuu8")
-region = Rect2(384, 0, 80, 64)
+region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gct3g"]
 atlas = ExtResource("3_2cuu8")
-region = Rect2(464, 0, 80, 64)
+region = Rect2(448, 0, 64, 64)
 
 [node name="WorkerGloves" unique_id=47595653 instance=ExtResource("1_nuije")]
 script = ExtResource("2_6l3ca")
 
 [node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
-polygon = PackedVector2Array(-33, -13, -30, -19, -24, -15, -17, -28, -12, -24, -7, -27, 0, -21, 7, -27, 12, -24, 17, -28, 24, -15, 30, -19, 33, -13, 33, 5, 40, 17, 25, 23, 12, 5, 0, -7, -12, 5, -25, 23, -40, 17, -33, 5)
+polygon = PackedVector2Array(-26, 5, -25, -13, -21, -19, -16, -15, -9, -28, -3, -25, 1, -27, 5, -23, 9, -18, 6, -14, 9, -12, 15, -19, 19, -15, 24, -18, 28, -16, 27, -13, 32, -10, 29, -5, 32, 0, 14, 20, 6, 32, -9, 26, -2, 14, -3, 4, -12, 16, -17, 23, -32, 17)
 
 [node name="BodySprite" parent="." index="1" unique_id=497898303]
 texture = SubResource("AtlasTexture_dik0y")

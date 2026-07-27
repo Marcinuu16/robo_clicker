@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://y4bj4dq2yenj" path="res://assets/textures/car_trunk.png" id="1_8ptd5"]
 [ext_resource type="PackedScene" uid="uid://kiqv3rrh8px8" path="res://core/views/car/trunk/trunk_interaction.tscn" id="2_br0gq"]
 [ext_resource type="PackedScene" uid="uid://nnu20nv0xvm0" path="res://core/interactibles/gloves/worker_gloves.tscn" id="3_xohje"]
+[ext_resource type="PackedScene" uid="uid://di22qvhnnf0tt" path="res://core/interactibles/flashlight/flashlight.tscn" id="4_m4m88"]
 
 [node name="CarInside" type="Node2D" unique_id=351541619]
 
@@ -13,4 +14,7 @@ centered = false
 [node name="TrunkInteraction" parent="." unique_id=47595653 instance=ExtResource("2_br0gq")]
 
 [node name="WorkerGloves" parent="." unique_id=1375425952 instance=ExtResource("3_xohje")]
-position = Vector2(81, 140)
+position = Vector2(74, 134)
+
+[node name="Flashlight" parent="." unique_id=1850040736 instance=ExtResource("4_m4m88")]
+position = Vector2(134, 135)

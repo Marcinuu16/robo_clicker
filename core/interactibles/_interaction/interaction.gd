@@ -32,5 +32,6 @@ func left_click():
 	print("mouse clicked an object")
 	if AutoloadGameManager.can_purchase(upgrade_name):
 		AutoloadGameManager.purchase(upgrade_name)
+		hover_object()
 		
 	

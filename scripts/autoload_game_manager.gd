@@ -1,11 +1,12 @@
 extends Node
-var click_count: int = 0
+var click_amount: int = 0
+var scrap_amount: int = 0 
 var gui_node: Control
 var number_label: Label
 var numberD_label: Label
 var description_label: Label
 var descriptionD_label: Label
-
+var is_combo = false
 var click_timer: Timer
 
 var owned_upgrades = {
@@ -24,8 +25,9 @@ var owned_upgrades = {
 	"Flashlight":{
 		"owned":false,
 		"price":100,
-		"desc":"Allows seeing in dark spots
-		Every 3 clicks adds 5 bonus scrap"
+		"desc":"Cost: 100 scrap
+		'Allows seeing in dark spots'
+		Every 5 clicks adds 10 bonus scrap"
 	},
 	"Magnet":{
 		"owned":false,
@@ -97,17 +99,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func update_click_count(amount: int):
+func update_click_amount(amount: int):
+	
 	if owned_upgrades["WorkerGloves"]["owned"] == true:
 		amount += 1
+	if owned_upgrades["Flashlight"]["owned"] == true and click_amount % 5 == 0:
+		amount += 5
+		is_combo = true
 		
-	click_count += amount
+		
+	click_amount += 1
+	scrap_amount += amount
 	update_click_gui()
-
+	is_combo = false
+	
 func update_click_gui():
-	number_label.text = str(click_count)
-	numberD_label.text = str(click_count)
-	number_label.label_settings.font_color = Color.GOLD
+	number_label.text = str(scrap_amount)
+	numberD_label.text = str(scrap_amount)
+	if is_combo:
+		number_label.label_settings.font_color = Color.RED
+		get_tree().current_scene.get_node("Combo").play()
+	else:
+		number_label.label_settings.font_color = Color.GOLD
+		get_tree().current_scene.get_node("Normal").play()
+	
 	click_timer.start()
 	await click_timer.timeout
 	number_label.label_settings.font_color = Color.WHITE
@@ -135,7 +150,7 @@ func can_purchase(name):
 	if name == "NonUpgrade":
 		description_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		return
-	if (click_count < owned_upgrades[name].price) or owned_upgrades[name].owned == true:
+	if (scrap_amount < owned_upgrades[name].price) or owned_upgrades[name].owned == true:
 		print("--- You can't purchase "+name)
 		description_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 		return false
@@ -145,7 +160,7 @@ func can_purchase(name):
 		return true
 func purchase(name):
 	owned_upgrades[name]["owned"] = true
-	click_count = click_count - owned_upgrades[name]["price"]
+	scrap_amount = scrap_amount - owned_upgrades[name]["price"]
 	update_click_gui()
 	print(owned_upgrades)
 	

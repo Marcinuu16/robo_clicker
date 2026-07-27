@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dxk2rjoaivtfk" path="res://scenes/gui.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cfvdox8ritol0" path="res://core/views/junkyard/junkyard_outside.tscn" id="2_yqjtg"]
+[ext_resource type="AudioStream" uid="uid://cpdo54ww2qqka" path="res://assets/audio/shiny_metal.mp3" id="3_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://b1wmxork6x5lw" path="res://assets/audio/normal_metal.mp3" id="4_iywne"]
 
 [node name="Game" type="Node2D" unique_id=990814266]
 
@@ -11,3 +13,13 @@
 
 [node name="gui" parent="." unique_id=2029906526 instance=ExtResource("1_uwrxv")]
 metadata/_edit_use_anchors_ = true
+
+[node name="Combo" type="AudioStreamPlayer2D" parent="." unique_id=615239166]
+stream = ExtResource("3_lbhrr")
+volume_db = -8.741
+max_polyphony = 3
+
+[node name="Normal" type="AudioStreamPlayer2D" parent="." unique_id=123026402]
+stream = ExtResource("4_iywne")
+volume_db = -13.607
+max_polyphony = 3

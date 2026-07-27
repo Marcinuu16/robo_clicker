@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://di22qvhnnf0tt"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_kauwk"]
+[ext_resource type="Script" uid="uid://mnkn1phhdbcv" path="res://core/interactibles/flashlight/flashlight.gd" id="2_4jvl5"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="3_xax78"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rra4i"]
+atlas = ExtResource("3_xax78")
+region = Rect2(512, 1, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeft5"]
+atlas = ExtResource("3_xax78")
+region = Rect2(576, 1, 64, 66)
+
+[node name="Flashlight" unique_id=47595653 instance=ExtResource("1_kauwk")]
+script = ExtResource("2_4jvl5")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(30, 2, 11, 16, -5, 30, -16, 30, -24, 24, -29, 16, -29, 5, -25, -2, -9, -9, -7, -15, 11, -21, 13, -18, 16, -19, 25, -13)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_rra4i")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_yeft5")
