@@ -1,11 +1,15 @@
 extends Node
 var click_amount: int = 0
 var scrap_amount: int = 0 
+var new_focus: String
+var old_focus: String
+
 var gui_node: Control
 var number_label: Label
 var numberD_label: Label
 var description_label: Label
 var descriptionD_label: Label
+
 var is_combo = false
 var click_timer: Timer
 
@@ -32,8 +36,9 @@ var owned_upgrades = {
 	"Magnet":{
 		"owned":false,
 		"price":200,
-		"desc":"A magnet helps pulling things towards you;
-		15% chance of granting +10 scrap with each click"
+		"desc":"Cost: 200 scrap
+		'A magnet helps pulling things towards you'
+		10% chance of granting +20 scrap with each click"
 	},
 	"FoldingChair":{
 		"owned":false,
@@ -104,9 +109,11 @@ func update_click_amount(amount: int):
 	if owned_upgrades["WorkerGloves"]["owned"] == true:
 		amount += 1
 	if owned_upgrades["Flashlight"]["owned"] == true and click_amount % 5 == 0:
-		amount += 5
+		amount += 10
 		is_combo = true
-		
+	if owned_upgrades["Magnet"]["owned"] == true and randi() % 100 < 10:
+		amount += 30
+		is_combo = true
 		
 	click_amount += 1
 	scrap_amount += amount
@@ -131,6 +138,20 @@ func update_description_gui(desc):
 	description_label.text = desc
 	descriptionD_label.text = desc
 	
+func change_focus(name,action):
+	new_focus = name
+	if action == "exit" and old_focus != new_focus:
+		print("--- Trying to leave an body thats not even focused")
+		return
+	elif action == "exit" and old_focus == new_focus:
+		print("--- Left an body!")
+		update_description_gui("")
+		return
+	var upgrade_data = owned_upgrades.get(name, {})
+	var description = upgrade_data.get("desc", "Test dummy")
+	update_description_gui(description)
+	old_focus = new_focus
+	
 func change_view(scene_path: String):
 	var packed_scene = load(scene_path)
 	if not packed_scene:
@@ -147,14 +168,14 @@ func change_view(scene_path: String):
 	update_description_gui("")
 
 func can_purchase(name):
-	if name == "NonUpgrade":
+	if name == "NonUpgrade" or name == "Trunk":
 		description_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		return
 	if (scrap_amount < owned_upgrades[name].price) or owned_upgrades[name].owned == true:
 		print("--- You can't purchase "+name)
 		description_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 		return false
-	else: 
+	else:
 		description_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		print("--- You can purchase "+name)
 		return true

@@ -23,11 +23,11 @@ func hover_object():
 		$OutlineSprite.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	else:
 		$OutlineSprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
-	AutoloadGameManager.update_description_gui(AutoloadGameManager.owned_upgrades[upgrade_name]["desc"])
+	AutoloadGameManager.change_focus(upgrade_name,"enter")
 func dehover_object():
 	print("mouse has exited an object")
 	$OutlineSprite.visible = false
-	AutoloadGameManager.update_description_gui("")
+	AutoloadGameManager.change_focus(upgrade_name,"exit")
 func left_click():
 	print("mouse clicked an object")
 	if AutoloadGameManager.can_purchase(upgrade_name):

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bpjlp1sg3klx7"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_8ayll"]
+[ext_resource type="Script" uid="uid://dbd11odej3q4o" path="res://core/interactibles/magnet/magnet.gd" id="2_7qs6q"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="3_q253a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk3m6"]
+atlas = ExtResource("3_q253a")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjyhy"]
+atlas = ExtResource("3_q253a")
+region = Rect2(448, 64, 64, 64)
+
+[node name="Magnet" unique_id=47595653 instance=ExtResource("1_8ayll")]
+script = ExtResource("2_7qs6q")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(-27, 6, -22, -3, -3, -21, 2, -21, 7, -14, -13, 7, -15, 17, -5, 17, 2, 11, 5, 6, 21, -10, 29, -3, 29, 1, 1, 29, -3, 30, -16, 30, -27, 18)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_uk3m6")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_pjyhy")
