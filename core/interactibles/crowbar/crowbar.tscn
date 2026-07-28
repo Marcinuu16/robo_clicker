@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d106e1art76hb"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_crart"]
+[ext_resource type="Script" uid="uid://cy4ay5eg57pvw" path="res://core/interactibles/crowbar/crowbar.gd" id="2_ejsb3"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="3_jucl8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbcce"]
+atlas = ExtResource("3_jucl8")
+region = Rect2(384, 128, 192, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu7qn"]
+atlas = ExtResource("3_jucl8")
+region = Rect2(384, 192, 192, 64)
+
+[node name="Crowbar" unique_id=47595653 instance=ExtResource("1_crart")]
+script = ExtResource("2_ejsb3")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(-86, -22, -75, -23, 40, 12, 64, 18, 62, 22, 46, 24, -76, -14, -67, -3, -70, 0, -81, -11, -78, -2, -80, 1, -90, -11, -90, -17)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_tbcce")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_fu7qn")

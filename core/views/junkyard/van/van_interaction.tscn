@@ -22,5 +22,4 @@ polygon = PackedVector2Array(29, -29, 32, -29, 32, 32, -19, 32, -13, -9, 0, -11,
 texture = SubResource("AtlasTexture_41kux")
 
 [node name="OutlineSprite" parent="." index="2" unique_id=934523477]
-visible = false
 texture = SubResource("AtlasTexture_73gqn")

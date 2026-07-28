@@ -19,6 +19,11 @@ var owned_upgrades = {
 		"price":0,
 		"desc":"Test Dummy for now"
 	},
+	"Van":{
+		"owned":false,
+		"price":999999999,
+		"desc":"Locked Vehicle"
+	},
 	"WorkerGloves":{
 		"owned":false,
 		"price":30,
@@ -53,7 +58,9 @@ var owned_upgrades = {
 	"Crowbar":{
 		"owned":false,
 		"price":3000,
-		"desc":"Open any jammed door; Grants access to the Van"
+		"desc":"Cost: 3000 scrap
+		'Open any jammed door'
+		Grants access to the Van"
 	},
 	"AngleGrinder":{
 		"owned":false,
