@@ -16,13 +16,13 @@ centered = false
 [node name="TrunkInteraction" parent="." unique_id=47595653 instance=ExtResource("2_br0gq")]
 
 [node name="WorkerGloves" parent="." unique_id=1375425952 instance=ExtResource("3_xohje")]
-position = Vector2(74, 134)
+position = Vector2(87, 131)
 
 [node name="Flashlight" parent="." unique_id=1850040736 instance=ExtResource("4_m4m88")]
-position = Vector2(134, 135)
+position = Vector2(164, 130)
 
 [node name="Magnet" parent="." unique_id=1795313473 instance=ExtResource("5_ofkcw")]
-position = Vector2(193, 134)
+position = Vector2(234, 128)
 
 [node name="Crowbar" parent="." unique_id=2100004660 instance=ExtResource("6_ddsky")]
-position = Vector2(176, 70)
+position = Vector2(179, 71)

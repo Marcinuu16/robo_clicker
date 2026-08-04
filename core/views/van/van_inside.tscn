@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1t4qlon0knhw" path="res://assets/textures/van_back.png" id="1_ode3p"]
 [ext_resource type="PackedScene" uid="uid://bfqpbql3hfxlj" path="res://core/views/van/doors/doors_interaction.tscn" id="2_mvvw6"]
+[ext_resource type="PackedScene" uid="uid://dgc0v53h8rjlr" path="res://core/interactibles/grinder/angle_grinder.tscn" id="3_q5xnd"]
 
 [node name="VanInside" type="Node2D" unique_id=1079369823]
 
@@ -10,3 +11,6 @@ texture = ExtResource("1_ode3p")
 centered = false
 
 [node name="DoorsInteraction" parent="." unique_id=47595653 instance=ExtResource("2_mvvw6")]
+
+[node name="AngleGrinder" parent="." unique_id=261493362 instance=ExtResource("3_q5xnd")]
+position = Vector2(92, 142)

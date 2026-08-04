@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dgc0v53h8rjlr"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_mbjwf"]
+[ext_resource type="Script" uid="uid://brj1q84ha632h" path="res://core/interactibles/grinder/angle_grinder.gd" id="2_ch0g3"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="2_odfxg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch0g3"]
+atlas = ExtResource("2_odfxg")
+region = Rect2(384, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6sav"]
+atlas = ExtResource("2_odfxg")
+region = Rect2(448, 256, 64, 64)
+
+[node name="AngleGrinder" unique_id=47595653 instance=ExtResource("1_mbjwf")]
+script = ExtResource("2_ch0g3")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(-32, 7, -19, -1, -25, -5, -20, -11, -12, -4, -2, -13, 24, -20, 32, -18, 30, -12, 26, -10, 26, -6, 22, -1, 13, 3, 9, 1, 1, 4, 4, 9, 5, 16, -1, 22, -22, 23, -32, 17)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_ch0g3")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_m6sav")

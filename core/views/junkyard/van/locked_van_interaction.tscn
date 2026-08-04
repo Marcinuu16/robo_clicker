@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cfbroxl7uxrws"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_7ebpw"]
+[ext_resource type="Script" uid="uid://0xl8atl4a8wu" path="res://core/views/junkyard/van/locked_van_interaction.gd" id="2_otw6x"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="2_s7ln6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otw6x"]
+atlas = ExtResource("2_s7ln6")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uesik"]
+atlas = ExtResource("2_s7ln6")
+region = Rect2(320, 0, 64, 64)
+
+[node name="LockedVanInteraction" unique_id=47595653 instance=ExtResource("1_7ebpw")]
+script = ExtResource("2_otw6x")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(-1, -10, 4, -15, 28, -29, 32, -29, 32, 32, -6, 32)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_otw6x")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_uesik")

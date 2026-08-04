@@ -19,11 +19,6 @@ var owned_upgrades = {
 		"price":0,
 		"desc":"Test Dummy for now"
 	},
-	"Van":{
-		"owned":false,
-		"price":999999999,
-		"desc":"Locked Vehicle"
-	},
 	"WorkerGloves":{
 		"owned":false,
 		"price":30,
@@ -43,7 +38,7 @@ var owned_upgrades = {
 		"price":200,
 		"desc":"Cost: 200 scrap
 		'A magnet helps pulling things towards you'
-		10% chance of granting +20 scrap with each click"
+		10% chance of granting 3x scrap with each click"
 	},
 	"FoldingChair":{
 		"owned":false,
@@ -56,16 +51,18 @@ var owned_upgrades = {
 		"desc":"Necessary to start the engine of any modern vehicle; Grants 1.5x scrap per click"
 	},
 	"Crowbar":{
-		"owned":false,
-		"price":3000,
-		"desc":"Cost: 3000 scrap
+		"owned":true,
+		"price":800,
+		"desc":"Cost: 800 scrap
 		'Open any jammed door'
 		Grants access to the Van"
 	},
 	"AngleGrinder":{
 		"owned":false,
-		"price":5000,
-		"desc":"Useful for cutting and polishing materials; Grants +25 scrap per click"
+		"price":100,
+		"desc":"Cost: 1000 scrap
+		'Useful for cutting and polishing materials'
+		Grants +25 scrap per click"
 	},
 	"Blowtorch":{
 		"owned":false,
@@ -115,11 +112,13 @@ func update_click_amount(amount: int):
 	
 	if owned_upgrades["WorkerGloves"]["owned"] == true:
 		amount += 1
+	if owned_upgrades["AngleGrinder"]["owned"] == true:
+		amount += 25
 	if owned_upgrades["Flashlight"]["owned"] == true and click_amount % 5 == 0:
 		amount += 10
 		is_combo = true
 	if owned_upgrades["Magnet"]["owned"] == true and randi() % 100 < 10:
-		amount += 30
+		amount *= 3
 		is_combo = true
 		
 	click_amount += 1
@@ -175,10 +174,10 @@ func change_view(scene_path: String):
 	update_description_gui("")
 
 func can_purchase(name):
-	if name == "NonUpgrade" or name == "Trunk":
+	if name == "NonUpgrade" or name == "CarInter" or name == "VanInter":
 		description_label.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		return
-	if (scrap_amount < owned_upgrades[name].price) or owned_upgrades[name].owned == true:
+	if name == "LockedVan" or (scrap_amount < owned_upgrades[name].price) or owned_upgrades[name].owned == true :
 		print("--- You can't purchase "+name)
 		description_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 		return false

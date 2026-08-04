@@ -1,8 +1,24 @@
 [gd_scene format=3 uid="uid://bner5pamjieyk"]
 
 [ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_6kccr"]
-[ext_resource type="Script" uid="uid://13pmf2i4jepx" path="res://core/views/junkyard/van/van_interaction.gd" id="2_t6hgy"]
 [ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="3_pyrb7"]
+
+[sub_resource type="GDScript" id="GDScript_krynq"]
+script/source = "extends Interaction
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	super._ready()
+	print(\"The van runs!\")
+	upgrade_name = \"VanInter\"
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func left_click():
+	print(\"Clicked vam!\")
+	AutoloadGameManager.change_view(\"res://core/views/van/van_inside.tscn\")
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41kux"]
 atlas = ExtResource("3_pyrb7")
@@ -13,7 +29,7 @@ atlas = ExtResource("3_pyrb7")
 region = Rect2(192, 0, 64, 64)
 
 [node name="VanInteraction" unique_id=47595653 instance=ExtResource("1_6kccr")]
-script = ExtResource("2_t6hgy")
+script = SubResource("GDScript_krynq")
 
 [node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
 polygon = PackedVector2Array(29, -29, 32, -29, 32, 32, -19, 32, -13, -9, 0, -11, 3, -14)

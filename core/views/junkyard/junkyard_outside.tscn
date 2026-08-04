@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://cfvdox8ritol0"]
 
+[ext_resource type="Script" uid="uid://bml0gadg56ipu" path="res://core/views/junkyard/junkyard_outside.gd" id="1_tyn6n"]
 [ext_resource type="PackedScene" uid="uid://cmfcqmv8ioyy3" path="res://core/views/sky/sky.tscn" id="2_5fqem"]
 [ext_resource type="PackedScene" uid="uid://bhcekrb2u3bvh" path="res://core/views/junkyard/landfill/landfill_interaction.tscn" id="3_jw7r8"]
 [ext_resource type="PackedScene" uid="uid://bykgp2dvqalfu" path="res://core/views/junkyard/car/car_interaction.tscn" id="4_ghpm3"]
 [ext_resource type="PackedScene" uid="uid://bner5pamjieyk" path="res://core/views/junkyard/van/van_interaction.tscn" id="5_cmx4j"]
+[ext_resource type="PackedScene" uid="uid://cfbroxl7uxrws" path="res://core/views/junkyard/van/locked_van_interaction.tscn" id="5_hlsxn"]
 
 [node name="JunkyardOutside" type="Node2D" unique_id=66199693]
+script = ExtResource("1_tyn6n")
 
 [node name="Sky" parent="." unique_id=167517914 instance=ExtResource("2_5fqem")]
 
@@ -16,4 +19,7 @@ position = Vector2(160, 90)
 position = Vector2(32, 148)
 
 [node name="Van" parent="." unique_id=1745569559 instance=ExtResource("5_cmx4j")]
+position = Vector2(288, 148)
+
+[node name="LockedVanInteraction" parent="." unique_id=2086007987 instance=ExtResource("5_hlsxn")]
 position = Vector2(288, 148)

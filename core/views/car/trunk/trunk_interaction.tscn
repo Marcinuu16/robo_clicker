@@ -10,7 +10,7 @@ region = Rect2(0, 128, 320, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1yerx"]
 atlas = ExtResource("3_2wtq4")
-region = Rect2(0, 192, 0, 64)
+region = Rect2(0, 192, 320, 64)
 
 [node name="TrunkInteraction" unique_id=47595653 instance=ExtResource("1_xqugj")]
 script = ExtResource("2_6kyy1")
