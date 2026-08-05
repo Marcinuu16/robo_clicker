@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b1t4qlon0knhw" path="res://assets/textures/van_back.png" id="1_ode3p"]
 [ext_resource type="PackedScene" uid="uid://bfqpbql3hfxlj" path="res://core/views/van/doors/doors_interaction.tscn" id="2_mvvw6"]
 [ext_resource type="PackedScene" uid="uid://dgc0v53h8rjlr" path="res://core/interactibles/grinder/angle_grinder.tscn" id="3_q5xnd"]
+[ext_resource type="PackedScene" uid="uid://btuspa35xqoj1" path="res://core/interactibles/torch/blowtorch.tscn" id="4_46bj5"]
 
 [node name="VanInside" type="Node2D" unique_id=1079369823]
 
@@ -14,3 +15,6 @@ centered = false
 
 [node name="AngleGrinder" parent="." unique_id=261493362 instance=ExtResource("3_q5xnd")]
 position = Vector2(92, 142)
+
+[node name="Blowtorch" parent="." unique_id=1722603532 instance=ExtResource("4_46bj5")]
+position = Vector2(143, 138)

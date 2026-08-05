@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btuspa35xqoj1"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_i2aj1"]
+[ext_resource type="Script" uid="uid://ca4mdv83wygn5" path="res://core/interactibles/torch/blowtorch.gd" id="2_suv31"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="3_kima8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kmv4"]
+atlas = ExtResource("3_kima8")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjje8"]
+atlas = ExtResource("3_kima8")
+region = Rect2(448, 320, 64, 64)
+
+[node name="Blowtorch" unique_id=47595653 instance=ExtResource("1_i2aj1")]
+script = ExtResource("2_suv31")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(-1, -5, -7, -5, -5, -12, -20, -18, -16, -24, -4, -22, 1, -24, 18, -17, 21, -12, 19, -8, 13, -6, 12, 19, 16, 24, 10, 27, -3, 29, -10, 22, -3, 15)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_0kmv4")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_pjje8")

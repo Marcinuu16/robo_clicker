@@ -10,7 +10,7 @@ var numberD_label: Label
 var description_label: Label
 var descriptionD_label: Label
 
-var is_combo = false
+var combo_count: int = 0
 var click_timer: Timer
 
 var owned_upgrades = {
@@ -22,21 +22,24 @@ var owned_upgrades = {
 	"WorkerGloves":{
 		"owned":false,
 		"price":30,
-		"desc":"Cost: 30 scrap
+		"desc":"Worker Gloves
+		Cost: 30 scrap
 		'Basic Gloves to get the job done'
 		Grants +1 scrap per click"
 	},
 	"Flashlight":{
 		"owned":false,
 		"price":100,
-		"desc":"Cost: 100 scrap
+		"desc":"Flashlight
+		Cost: 100 scrap
 		'Allows seeing in dark spots'
 		Every 5 clicks adds 10 bonus scrap"
 	},
 	"Magnet":{
 		"owned":false,
 		"price":200,
-		"desc":"Cost: 200 scrap
+		"desc":"Magnet
+		Cost: 200 scrap
 		'A magnet helps pulling things towards you'
 		10% chance of granting 3x scrap with each click"
 	},
@@ -52,22 +55,27 @@ var owned_upgrades = {
 	},
 	"Crowbar":{
 		"owned":true,
-		"price":800,
-		"desc":"Cost: 800 scrap
+		"price":500,
+		"desc":"Crowbar
+		Cost: 500 scrap
 		'Open any jammed door'
 		Grants access to the Van"
 	},
 	"AngleGrinder":{
 		"owned":false,
-		"price":100,
-		"desc":"Cost: 1000 scrap
+		"price":1000,
+		"desc":"Angle Grinder
+		Cost: 1000 scrap
 		'Useful for cutting and polishing materials'
 		Grants +25 scrap per click"
 	},
 	"Blowtorch":{
-		"owned":false,
-		"price":10000,
-		"desc":"Are you a welder?; 5% chance of granting +250 scrap with each click"
+		"owned":true,
+		"price":2000,
+		"desc":"Blowtorch
+		Cost: 2000 scrap
+		'Are you a welder?'
+		5% chance of granting +250 scrap with each click"
 	},
 	"RoofRack":{
 		"owned":false,
@@ -116,25 +124,35 @@ func update_click_amount(amount: int):
 		amount += 25
 	if owned_upgrades["Flashlight"]["owned"] == true and click_amount % 5 == 0:
 		amount += 10
-		is_combo = true
+		combo_count += 1
+	if owned_upgrades["Blowtorch"]["owned"] == true and randi() % 100 < 5:
+		amount += 250
+		combo_count += 1
 	if owned_upgrades["Magnet"]["owned"] == true and randi() % 100 < 10:
 		amount *= 3
-		is_combo = true
+		combo_count += 1
 		
 	click_amount += 1
 	scrap_amount += amount
 	update_click_gui()
-	is_combo = false
+	combo_count = 0
 	
 func update_click_gui():
 	number_label.text = str(scrap_amount)
 	numberD_label.text = str(scrap_amount)
-	if is_combo:
+	if combo_count == 1:
 		number_label.label_settings.font_color = Color.RED
+		get_tree().current_scene.get_node("Combo").play()
+	elif combo_count == 2:
+		number_label.label_settings.font_color = Color.BLUE
+		get_tree().current_scene.get_node("Combo").play()
+	elif combo_count == 3:
+		number_label.label_settings.font_color = Color.PURPLE
 		get_tree().current_scene.get_node("Combo").play()
 	else:
 		number_label.label_settings.font_color = Color.GOLD
 		get_tree().current_scene.get_node("Normal").play()
+		
 	
 	click_timer.start()
 	await click_timer.timeout
