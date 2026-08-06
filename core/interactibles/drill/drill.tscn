@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://0k33hsffiavb"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_uq7o4"]
+[ext_resource type="Script" uid="uid://bkpxjxq0jmgio" path="res://core/interactibles/drill/drill.gd" id="2_7ilja"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="2_pkc5q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ilja"]
+atlas = ExtResource("2_pkc5q")
+region = Rect2(512, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slq0o"]
+atlas = ExtResource("2_pkc5q")
+region = Rect2(576, 256, 64, 64)
+
+[node name="Drill" unique_id=47595653 instance=ExtResource("1_uq7o4")]
+script = ExtResource("2_7ilja")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(1, 7, -5, -6, -8, -6, -15, -12, -22, -17, -2, -27, 18, -25, 21, -22, 21, -16, 17, -12, 11, -11, 13, 4, 18, 20, 14, 24, -7, 26, -13, 20, -13, 15)
+
+[node name="BodySprite" parent="." index="1" unique_id=497898303]
+texture = SubResource("AtlasTexture_7ilja")
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_slq0o")

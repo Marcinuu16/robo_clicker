@@ -33,7 +33,7 @@ var owned_upgrades = {
 		"desc":"Flashlight
 		Cost: 100 scrap
 		'Allows seeing in dark spots'
-		Every 5 clicks adds 10 bonus scrap"
+		Every 10 clicks adds 20 bonus scrap"
 	},
 	"Magnet":{
 		"owned":false,
@@ -70,7 +70,7 @@ var owned_upgrades = {
 		Grants +25 scrap per click"
 	},
 	"Blowtorch":{
-		"owned":true,
+		"owned":false,
 		"price":2000,
 		"desc":"Blowtorch
 		Cost: 2000 scrap
@@ -87,10 +87,13 @@ var owned_upgrades = {
 		"price":35000,
 		"desc":"Suprisngly simple, yet effective at lifting; Every 10 clicks adds 100 bonus scrap"
 	},
-	"ImpactWrench":{
+	"Drill":{
 		"owned":false,
-		"price":50000,
-		"desc":"VRRRRRRRRRR-BRRRT-BRRRT; Flat +200 scrap bonus"
+		"price":4000,
+		"desc":"Drill
+		Cost: 4000 Scrap
+		'VRRRRRRRRRRRRRRRRRRRRRRR'
+		Grants 2x Scrap per click"
 	},
 	"ConveyorBelt":{
 		"owned":false,
@@ -122,8 +125,8 @@ func update_click_amount(amount: int):
 		amount += 1
 	if owned_upgrades["AngleGrinder"]["owned"] == true:
 		amount += 25
-	if owned_upgrades["Flashlight"]["owned"] == true and click_amount % 5 == 0:
-		amount += 10
+	if owned_upgrades["Flashlight"]["owned"] == true and click_amount % 10 == 0:
+		amount += 20
 		combo_count += 1
 	if owned_upgrades["Blowtorch"]["owned"] == true and randi() % 100 < 5:
 		amount += 250
@@ -131,6 +134,8 @@ func update_click_amount(amount: int):
 	if owned_upgrades["Magnet"]["owned"] == true and randi() % 100 < 10:
 		amount *= 3
 		combo_count += 1
+	if owned_upgrades["Drill"]["owned"] == true:
+		amount *= 2
 		
 	click_amount += 1
 	scrap_amount += amount
