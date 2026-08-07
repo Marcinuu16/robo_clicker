@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c247hwdtja6fa"]
+
+[ext_resource type="PackedScene" uid="uid://deylbytwtcknv" path="res://core/interactibles/_interaction/interaction.tscn" id="1_hsnf4"]
+[ext_resource type="Texture2D" uid="uid://b3e502sp4fuiq" path="res://assets/textures/outlines.png" id="2_eijym"]
+[ext_resource type="Script" uid="uid://qdg7dd4xw47u" path="res://core/interactibles/tracker/tracker.gd" id="2_ihmca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihmca"]
+atlas = ExtResource("2_eijym")
+region = Rect2(512, 320, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrtg5"]
+atlas = ExtResource("2_eijym")
+region = Rect2(528, 320, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsmkn"]
+atlas = ExtResource("2_eijym")
+region = Rect2(544, 320, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7pxhf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihmca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrtg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsmkn")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eijym"]
+atlas = ExtResource("2_eijym")
+region = Rect2(512, 336, 18, 18)
+
+[node name="Tracker" unique_id=47595653 instance=ExtResource("1_hsnf4")]
+script = ExtResource("2_ihmca")
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2063484064) index="0" unique_id=1964901811]
+polygon = PackedVector2Array(-9, -2, -2, -9, 2, -9, 9, -2, 9, 2, 2, 9, -2, 9, -9, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BodySprite" parent_id_path=PackedInt32Array(497898303) index="0" unique_id=1947431533]
+sprite_frames = SubResource("SpriteFrames_7pxhf")
+autoplay = "default"
+frame_progress = 0.6247306
+
+[node name="OutlineSprite" parent="." index="2" unique_id=934523477]
+texture = SubResource("AtlasTexture_eijym")

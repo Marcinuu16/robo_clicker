@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://thxynlfalg6k"]
+
+[ext_resource type="Texture2D" uid="uid://cfxex6ro40d25" path="res://assets/textures/caught.png" id="1_f058c"]
+
+[node name="Caught" type="Node2D" unique_id=452803022]
+position = Vector2(-9, 0)
+scale = Vector2(0.92000014, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=198704216]
+texture = ExtResource("1_f058c")
+centered = false

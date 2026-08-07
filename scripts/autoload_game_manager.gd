@@ -17,7 +17,7 @@ var owned_upgrades = {
 	"NonUpgrade":{
 		"owned":false,
 		"price":0,
-		"desc":"Test Dummy for now"
+		"desc":""
 	},
 	"WorkerGloves":{
 		"owned":false,
@@ -43,18 +43,8 @@ var owned_upgrades = {
 		'A magnet helps pulling things towards you'
 		10% chance of granting 3x scrap with each click"
 	},
-	"FoldingChair":{
-		"owned":false,
-		"price":500,
-		"desc":"Strategic resting spot; Unlocks idle scrap collection every 1s"
-	},
-	"CarBattery":{
-		"owned":false,
-		"price":1500,
-		"desc":"Necessary to start the engine of any modern vehicle; Grants 1.5x scrap per click"
-	},
 	"Crowbar":{
-		"owned":true,
+		"owned":false,
 		"price":500,
 		"desc":"Crowbar
 		Cost: 500 scrap
@@ -63,9 +53,9 @@ var owned_upgrades = {
 	},
 	"AngleGrinder":{
 		"owned":false,
-		"price":1000,
+		"price":700,
 		"desc":"Angle Grinder
-		Cost: 1000 scrap
+		Cost: 700 scrap
 		'Useful for cutting and polishing materials'
 		Grants +25 scrap per click"
 	},
@@ -77,33 +67,21 @@ var owned_upgrades = {
 		'Are you a welder?'
 		5% chance of granting +250 scrap with each click"
 	},
-	"RoofRack":{
-		"owned":false,
-		"price":20000,
-		"desc":"You must have one in your garage; Grants 2.5x scrap per click"
-	},
-	"CarJack":{
-		"owned":false,
-		"price":35000,
-		"desc":"Suprisngly simple, yet effective at lifting; Every 10 clicks adds 100 bonus scrap"
-	},
 	"Drill":{
 		"owned":false,
-		"price":4000,
+		"price":6000,
 		"desc":"Drill
-		Cost: 4000 Scrap
+		Cost: 6000 Scrap
 		'VRRRRRRRRRRRRRRRRRRRRRRR'
 		Grants 2x Scrap per click"
 	},
-	"ConveyorBelt":{
+	"Tracker":{
 		"owned":false,
-		"price":100000,
-		"desc":"Factorio at home; Idle scrap collection every 0.1 seconds"
-	},
-	"Crane":{
-		"owned":false,
-		"price":5000000,
-		"desc":"This is a giant fucking crane with a BIG magent; Suprise"
+		"price":20000,
+		"desc":"Tracker
+		Cost: 20000 Scrap
+		'Weird blinking device'
+		???"
 	}
 }
 	
@@ -177,7 +155,7 @@ func change_focus(name,action):
 		update_description_gui("")
 		return
 	var upgrade_data = owned_upgrades.get(name, {})
-	var description = upgrade_data.get("desc", "Test dummy")
+	var description = upgrade_data.get("desc", "")
 	update_description_gui(description)
 	old_focus = new_focus
 	
@@ -210,10 +188,16 @@ func can_purchase(name):
 		return true
 func purchase(name):
 	owned_upgrades[name]["owned"] = true
+	if name == "Tracker":
+		trigger_end()
+		
 	scrap_amount = scrap_amount - owned_upgrades[name]["price"]
 	update_click_gui()
 	print(owned_upgrades)
-	
+
+func trigger_end():
+	change_view("res://core/views/caught/caught.tscn")
+	gui_node.visible = false
 	
 
 	

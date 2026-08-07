@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dgc0v53h8rjlr" path="res://core/interactibles/grinder/angle_grinder.tscn" id="3_q5xnd"]
 [ext_resource type="PackedScene" uid="uid://btuspa35xqoj1" path="res://core/interactibles/torch/blowtorch.tscn" id="4_46bj5"]
 [ext_resource type="PackedScene" uid="uid://0k33hsffiavb" path="res://core/interactibles/drill/drill.tscn" id="5_dcbmp"]
+[ext_resource type="PackedScene" uid="uid://c247hwdtja6fa" path="res://core/interactibles/tracker/tracker.tscn" id="6_0xc6p"]
 
 [node name="VanInside" type="Node2D" unique_id=1079369823]
 
@@ -22,3 +23,6 @@ position = Vector2(161, 136)
 
 [node name="Drill" parent="." unique_id=1340389233 instance=ExtResource("5_dcbmp")]
 position = Vector2(220, 138)
+
+[node name="Tracker" parent="." unique_id=1525856989 instance=ExtResource("6_0xc6p")]
+position = Vector2(105, 87)
