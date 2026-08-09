@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cfvdox8ritol0" path="res://core/views/junkyard/junkyard_outside.tscn" id="2_yqjtg"]
 [ext_resource type="AudioStream" uid="uid://cpdo54ww2qqka" path="res://assets/audio/shiny_metal.mp3" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://b1wmxork6x5lw" path="res://assets/audio/normal_metal.mp3" id="4_iywne"]
+[ext_resource type="AudioStream" uid="uid://bpanswasg0n7d" path="res://assets/audio/scrap_melody.wav" id="5_iywne"]
 
 [node name="Game" type="Node2D" unique_id=990814266]
 
@@ -21,5 +22,10 @@ max_polyphony = 3
 
 [node name="Normal" type="AudioStreamPlayer2D" parent="." unique_id=123026402]
 stream = ExtResource("4_iywne")
-volume_db = -13.607
+volume_db = -29.2
 max_polyphony = 3
+
+[node name="Melody" type="AudioStreamPlayer2D" parent="." unique_id=1220922413]
+stream = ExtResource("5_iywne")
+volume_db = 2.916
+autoplay = true
