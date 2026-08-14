@@ -128,15 +128,14 @@ func update_click_gui():
 		get_tree().current_scene.get_node("Combo").play()
 	elif combo_count == 2:
 		number_label.label_settings.font_color = Color.BLUE
-		get_tree().current_scene.get_node("Combo").play()
+		get_tree().current_scene.get_node("SuperCombo").play()
 	elif combo_count == 3:
 		number_label.label_settings.font_color = Color.PURPLE
-		get_tree().current_scene.get_node("Combo").play()
+		get_tree().current_scene.get_node("UltraCombo").play()
 	else:
 		number_label.label_settings.font_color = Color.GOLD
 		get_tree().current_scene.get_node("Normal").play()
 		
-	
 	click_timer.start()
 	await click_timer.timeout
 	number_label.label_settings.font_color = Color.WHITE

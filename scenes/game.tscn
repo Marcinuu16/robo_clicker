@@ -17,7 +17,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Combo" type="AudioStreamPlayer2D" parent="." unique_id=615239166]
 stream = ExtResource("3_lbhrr")
+volume_db = -14.573
+pitch_scale = 0.44
+max_polyphony = 3
+
+[node name="SuperCombo" type="AudioStreamPlayer2D" parent="." unique_id=151061070]
+stream = ExtResource("3_lbhrr")
 volume_db = -8.741
+pitch_scale = 1.15
+max_polyphony = 3
+
+[node name="UltraCombo" type="AudioStreamPlayer2D" parent="." unique_id=583152045]
+stream = ExtResource("3_lbhrr")
+volume_db = -8.741
+pitch_scale = 1.52
 max_polyphony = 3
 
 [node name="Normal" type="AudioStreamPlayer2D" parent="." unique_id=123026402]
