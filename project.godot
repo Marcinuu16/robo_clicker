@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Robo Clicker"
+config/name="Scrap Clicker"
 run/main_scene="uid://fpwjwa5ei1c4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://d2tamphn7fq6h"
